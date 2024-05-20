@@ -1,0 +1,17 @@
+server:
+  port: 8080
+  servlet:
+    context-path: /store-online
+
+spring:
+  application:
+    name: Store Online
+  datasource:
+    url: "jdbc:mysql://localhost:3306/store_online"
+    driverClassName: "com.mysql.cj.jdbc.Driver"
+    username: root
+    password: 123456
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
