@@ -14,6 +14,7 @@ public enum ErrorCode {
     // Authenticated and Authorized
     UNAUTHENTICATED             (80000, "Unauthenticated", HttpStatus.UNAUTHORIZED),
     UNAUTHORIZED                (80001, "You don't have permission", HttpStatus.FORBIDDEN),
+    INVALID_SIGNATURE           (80002, "Invalid signature", HttpStatus.BAD_REQUEST),
     // For user entity
     USER_USERNAME_EXISTED       (10000, "Username existed", HttpStatus.BAD_REQUEST),
     USER_CAN_NOT_FOUND          (10001, "Can't found user", HttpStatus.NOT_FOUND),

@@ -1,10 +1,12 @@
 package com.thnp.store.dto.response;
 
+import com.thnp.store.entity.Role;
 import lombok.*;
 import lombok.experimental.FieldDefaults;
 
 import java.time.LocalDate;
 import java.time.LocalDateTime;
+import java.util.Set;
 
 @Data
 @NoArgsConstructor
@@ -22,4 +24,5 @@ public class UserResponse {
     String          avatar;
     String          username;
     LocalDateTime   dateJoined;
+    Set<Role> roles;
 }

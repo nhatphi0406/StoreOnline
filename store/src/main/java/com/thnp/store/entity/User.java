@@ -6,6 +6,7 @@ import lombok.experimental.FieldDefaults;
 
 import java.time.LocalDate;
 import java.time.LocalDateTime;
+import java.util.Set;
 
 @Entity
 @Getter
@@ -37,4 +38,6 @@ public class User {
     LocalDateTime dateJoined;
     LocalDateTime updatedDate;
     boolean isActive;
+    @ManyToMany
+    Set<Role> roles;
 }

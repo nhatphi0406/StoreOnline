@@ -5,6 +5,7 @@ import lombok.*;
 import lombok.experimental.FieldDefaults;
 
 import java.time.LocalDate;
+import java.util.List;
 
 @Data
 @NoArgsConstructor
@@ -22,4 +23,5 @@ public class UserUpdateRequest {
     String          avatar;
     @Size(min = 6, message = "USER_INVALID_PASSWORD")
     String          password;
+    List<String>    roles;
 }

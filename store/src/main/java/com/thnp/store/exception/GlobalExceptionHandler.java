@@ -3,11 +3,10 @@ package com.thnp.store.exception;
 import com.thnp.store.dto.response.ApiResponse;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.access.AccessDeniedException;
 import org.springframework.web.bind.MethodArgumentNotValidException;
 import org.springframework.web.bind.annotation.ControllerAdvice;
 import org.springframework.web.bind.annotation.ExceptionHandler;
-
-import java.nio.file.AccessDeniedException;
 
 @ControllerAdvice
 @Slf4j

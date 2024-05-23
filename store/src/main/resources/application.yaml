@@ -15,5 +15,12 @@ spring:
     hibernate:
       ddl-auto: update
     show-sql: true
+
+logging:
+  level:
+    org:
+      springframework:
+        security: trace
+
 jwt:
   signerKey: "VDPGrxpnLm77NxNJgVOaOTKjw6LPQ9g2xWoaKKJDshGA/mYMiGBamWV6IvySEGP+"
