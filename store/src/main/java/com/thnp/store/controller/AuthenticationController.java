@@ -3,6 +3,7 @@ package com.thnp.store.controller;
 import com.nimbusds.jose.JOSEException;
 import com.thnp.store.dto.request.AuthenticationRequest;
 import com.thnp.store.dto.request.IntrospectRequest;
+import com.thnp.store.dto.request.LogoutRequest;
 import com.thnp.store.dto.response.ApiResponse;
 import com.thnp.store.dto.response.AuthenticationResponse;
 import com.thnp.store.dto.response.IntrospectResponse;
@@ -42,6 +43,15 @@ public class AuthenticationController {
 
         return ApiResponse.<IntrospectResponse>builder()
                 .result(result)
+                .build();
+    }
+
+    @PostMapping("/logout")
+    ApiResponse<Void> logout(@RequestBody LogoutRequest request)
+            throws ParseException, JOSEException {
+        authenticationService.logout(request);
+
+        return ApiResponse.<Void>builder()
                 .build();
     }
 }

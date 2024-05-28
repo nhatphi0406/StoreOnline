@@ -1,5 +1,6 @@
 package com.thnp.store.dto.request;
 
+import com.thnp.store.validator.DayOfBirthConstraint;
 import jakarta.validation.constraints.Size;
 import lombok.*;
 import lombok.experimental.FieldDefaults;
@@ -15,6 +16,7 @@ import java.util.List;
 public class UserUpdateRequest {
     String          firstName;
     String          lastName;
+    @DayOfBirthConstraint(min = 2, message = "USER_INVALID_DAY_OF_BIRTH")
     LocalDate       dayOfBirth;
     String          email;
     @Size(min = 10, max = 10, message = "USER_INVALID_PHONE")

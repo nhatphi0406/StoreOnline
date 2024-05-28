@@ -21,6 +21,7 @@ import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
 import java.time.LocalDateTime;
+import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.List;
 
@@ -49,9 +50,11 @@ public class UserService {
         user.setPassword(passwordEncoder.encode(request.getPassword()));
         user.setDateJoined(LocalDateTime.now());
         user.setActive(true);
-        HashSet<String> roles = new HashSet<>();
-        roles.add(Role.USER.name());
-//        user.setRoles(roles);
+
+        List<String> roleName = new ArrayList<>();
+        roleName.add(Role.USER.name());
+        var roles = roleRepository.findAllById(roleName);
+        user.setRoles(new HashSet<>(roles));
 
         return userMapper.toUserResponse(userRepository.save(user));
     }

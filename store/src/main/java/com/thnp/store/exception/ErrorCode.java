@@ -15,6 +15,7 @@ public enum ErrorCode {
     UNAUTHENTICATED             (80000, "Unauthenticated", HttpStatus.UNAUTHORIZED),
     UNAUTHORIZED                (80001, "You don't have permission", HttpStatus.FORBIDDEN),
     INVALID_SIGNATURE           (80002, "Invalid signature", HttpStatus.BAD_REQUEST),
+    INVALID_TOKEN               (80003, "Invalid token", HttpStatus.BAD_REQUEST),
     // For user entity
     USER_USERNAME_EXISTED       (10000, "Username existed", HttpStatus.BAD_REQUEST),
     USER_CAN_NOT_FOUND          (10001, "Can't found user", HttpStatus.NOT_FOUND),
@@ -22,7 +23,8 @@ public enum ErrorCode {
     USER_INVALID_USERNAME       (10003, "Username must be at least {min} characters", HttpStatus.BAD_REQUEST),
     USER_INVALID_PHONE          (10004, "Phone must be {max} characters", HttpStatus.BAD_REQUEST),
     USER_PHONE_EXISTED          (10005, "Phone existed", HttpStatus.BAD_REQUEST),
-    USER_EMAIL_EXISTED          (10006, "Email existed", HttpStatus.BAD_REQUEST)
+    USER_EMAIL_EXISTED          (10006, "Email existed", HttpStatus.BAD_REQUEST),
+    USER_INVALID_DAY_OF_BIRTH   (10007, "You must be at least {min} age", HttpStatus.BAD_REQUEST)
     ;
 
     int code;
