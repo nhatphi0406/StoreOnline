@@ -1,17 +1,19 @@
 package com.thnp.store.service;
 
+import java.util.List;
+
+import org.springframework.stereotype.Service;
+
 import com.thnp.store.dto.request.PermissionRequest;
 import com.thnp.store.dto.response.PermissionResponse;
 import com.thnp.store.entity.Permission;
 import com.thnp.store.mapper.PermissionMapper;
 import com.thnp.store.repository.PermissionRepository;
+
 import lombok.AccessLevel;
 import lombok.RequiredArgsConstructor;
 import lombok.experimental.FieldDefaults;
 import lombok.extern.slf4j.Slf4j;
-import org.springframework.stereotype.Service;
-
-import java.util.List;
 
 @Service
 @RequiredArgsConstructor
@@ -28,7 +30,9 @@ public class PermissionService {
     }
 
     public List<PermissionResponse> getPermissions() {
-        return permissionRepository.findAll().stream().map(permissionMapper::toPermissionResponse).toList();
+        return permissionRepository.findAll().stream()
+                .map(permissionMapper::toPermissionResponse)
+                .toList();
     }
 
     public void deletePermission(String permissionId) {

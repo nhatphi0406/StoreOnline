@@ -1,11 +1,11 @@
 package com.thnp.store.validator;
 
-import jakarta.validation.ConstraintValidator;
-import jakarta.validation.ConstraintValidatorContext;
-
 import java.time.LocalDate;
 import java.time.temporal.ChronoUnit;
 import java.util.Objects;
+
+import jakarta.validation.ConstraintValidator;
+import jakarta.validation.ConstraintValidatorContext;
 
 public class DayOfBirthValidator implements ConstraintValidator<DayOfBirthConstraint, LocalDate> {
     private int min;
@@ -18,8 +18,7 @@ public class DayOfBirthValidator implements ConstraintValidator<DayOfBirthConstr
 
     @Override
     public boolean isValid(LocalDate value, ConstraintValidatorContext context) {
-        if (Objects.isNull(value))
-            return true;
+        if (Objects.isNull(value)) return true;
 
         long year = ChronoUnit.YEARS.between(value, LocalDate.now());
 

@@ -1,19 +1,20 @@
 package com.thnp.store.service;
 
+import java.util.HashSet;
+import java.util.List;
+
+import org.springframework.stereotype.Service;
+
 import com.thnp.store.dto.request.RoleRequest;
 import com.thnp.store.dto.response.RoleResponse;
-import com.thnp.store.entity.Role;
 import com.thnp.store.mapper.RoleMapper;
 import com.thnp.store.repository.PermissionRepository;
 import com.thnp.store.repository.RoleRepository;
+
 import lombok.AccessLevel;
 import lombok.RequiredArgsConstructor;
 import lombok.experimental.FieldDefaults;
 import lombok.extern.slf4j.Slf4j;
-import org.springframework.stereotype.Service;
-
-import java.util.HashSet;
-import java.util.List;
 
 @Service
 @RequiredArgsConstructor

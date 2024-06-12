@@ -1,10 +1,11 @@
 package com.thnp.store.entity;
 
+import java.util.Set;
+
 import jakarta.persistence.*;
+
 import lombok.*;
 import lombok.experimental.FieldDefaults;
-
-import java.util.Set;
 
 @Entity
 @Getter
@@ -17,7 +18,9 @@ public class Role {
     @Id
     @Column(length = 100)
     String name;
+
     String description;
+
     @ManyToMany
     Set<Permission> permissions;
 }

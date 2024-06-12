@@ -1,10 +1,9 @@
 package com.thnp.store.entity;
 
-
 import jakarta.persistence.*;
+
 import lombok.*;
 import lombok.experimental.FieldDefaults;
-
 
 @Entity
 @Getter
@@ -17,5 +16,6 @@ public class Permission {
     @Id
     @Column(length = 100)
     String name;
+
     String description;
 }

@@ -1,19 +1,22 @@
 package com.thnp.store.controller;
 
+import java.util.List;
+
+import jakarta.validation.Valid;
+
+import org.springframework.security.core.context.SecurityContextHolder;
+import org.springframework.web.bind.annotation.*;
+
 import com.thnp.store.dto.request.UserCreationRequest;
 import com.thnp.store.dto.request.UserUpdateRequest;
 import com.thnp.store.dto.response.ApiResponse;
 import com.thnp.store.dto.response.UserResponse;
 import com.thnp.store.service.UserService;
-import jakarta.validation.Valid;
+
 import lombok.AccessLevel;
 import lombok.RequiredArgsConstructor;
 import lombok.experimental.FieldDefaults;
 import lombok.extern.slf4j.Slf4j;
-import org.springframework.security.core.context.SecurityContextHolder;
-import org.springframework.web.bind.annotation.*;
-
-import java.util.List;
 
 @RestController
 @RequestMapping("/users")
@@ -31,8 +34,8 @@ public class UserController {
     }
 
     @PutMapping("/{userId}")
-    public ApiResponse<UserResponse> updateUser(@PathVariable("userId") String userId,
-                                                @RequestBody @Valid UserUpdateRequest request) {
+    public ApiResponse<UserResponse> updateUser(
+            @PathVariable("userId") String userId, @RequestBody @Valid UserUpdateRequest request) {
         return ApiResponse.<UserResponse>builder()
                 .result(userService.updateUser(userId, request))
                 .build();

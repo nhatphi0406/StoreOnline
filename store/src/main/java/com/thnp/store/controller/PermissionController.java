@@ -1,16 +1,18 @@
 package com.thnp.store.controller;
 
+import java.util.List;
+
+import org.springframework.web.bind.annotation.*;
+
 import com.thnp.store.dto.request.PermissionRequest;
 import com.thnp.store.dto.response.ApiResponse;
 import com.thnp.store.dto.response.PermissionResponse;
 import com.thnp.store.service.PermissionService;
+
 import lombok.AccessLevel;
 import lombok.RequiredArgsConstructor;
 import lombok.experimental.FieldDefaults;
 import lombok.extern.slf4j.Slf4j;
-import org.springframework.web.bind.annotation.*;
-
-import java.util.List;
 
 @RestController
 @RequestMapping("/permissions")
